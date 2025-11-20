@@ -654,6 +654,58 @@
             background: currentColor;
             opacity: 0.25;             /* 细且淡的竖线 */
         }
+
+                /* --- Case Title & Prompt Styling --- */
+        .comparison-text-box {
+            text-align: center;
+            /* 增加下方间距，与视频拉开距离 */
+            margin-bottom: 45px; 
+            padding: 0 10%;
+            position: relative;
+        }
+
+        .case-title {
+            /* 使用艺术字体 */
+            font-family: 'DancingScript', cursive; 
+            font-size: 2.8em;
+            font-weight: 700;
+            /* 设置一个渐变色或独特的颜色，这里用金色渐变 */
+            background: linear-gradient(45deg, #FFD700, #ffb347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .comp-prompt-box {
+            /* 给 Prompt 一个磨砂玻璃质感的背景框 */
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px 25px;
+            display: inline-block;
+            max-width: 800px;
+            backdrop-filter: blur(5px);
+        }
+
+        .comp-prompt-label {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: #aaa;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block; /* 独占一行 */
+        }
+
+        .comp-prompt-content {
+            font-family: 'Alegreya', serif; /* 或者用 'Roboto' */
+            font-style: italic;
+            font-size: 1.3em;
+            color: #eee;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -756,7 +808,7 @@
                 <strong class="prompt-strong">Video Caption</strong>: In a bustling subway station at Union Square, the atmosphere is alive with the vibrant energy of urban nightlife, illuminated by the stark white tiles and the soft glow of overhead fluorescent lights. A young man, dressed in a blue patterned shirt and dark shorts, stands as the focal point, his golden saxophone held close as he plays with fervent passion. His cheeks puff rhythmically, his fingers dance deftly across the instrument's keys, and his body sways to the beat, creating a visual counterpart to the music's lively tempo. Behind him, another musician, clad in black, sits with a large metallic drum, his hands moving in a blur as they strike the surface, sending vibrations through the air that ripple like invisible waves. The camera pans smoothly, capturing the dynamic interplay between the musicians and their instruments, emphasizing the physicality of their performance. Passersby weave through the scene, some pausing to listen, their presence adding layers of depth and movement. The walls are adorned with advertisements, one featuring a woman in casual attire, her image static yet contributing to the urban tapestry. The floor beneath the musicians' feet shows signs of wear, hinting at the constant flow of people and the passage of time. The visual style is crisp and photorealistic, with high contrast and sharp details that bring every element into vivid focus, creating a highly detailed, representation of this captivating moment in the heart of the city. <br>
                 <strong class="prompt-strong">Audio Caption</strong>: The rich, soulful notes of a saxophone fill the bustling subway station, blending with metal drum and the ambient hum of the urban environment.</br>
                 </div>
-            </div>
+        </div>
 
             
         </div>
@@ -940,6 +992,7 @@
     </div>
     </section>
 
+    
     <!-- <section id="multi_ip">
         <div class="title" style="font-family: 'Alegreya'; font-size: 1.6em;">
             Video Generation from Text, Image & Audio (TIA)
@@ -1123,7 +1176,241 @@
             </div>
         </div>
     </section> -->
+    <section id="baselines">
+        <div class="title" style="font-family: 'Alegreya'; font-size: 1.6em;">
+            Compare With Baselines
+        </div>
+        <div class="description">
+            <em><strong>Please turn on the sound for watching. Hover over the video to reveal the video and audio captions.</strong></em>
+        </div>
 
+        <div class="content">
+            
+            <div class="comparison-case">
+                <div class="comparison-text-box">
+                    <div class="subtitle" style="font-family: 'Alegreya'; font-size: 1.6em;">Case 1</div>
+                    <div class="comp-prompt-box">
+                        <span class="comp-prompt-label">Video Caption</span>
+                        <span class="comp-prompt-content">
+                            "In a grand, opulent concert hall adorned with golden paneling and warm ambient lighting, a cellist and pianist engage in an intense musical performance, their expressions conveying deep concentration and passion. The cellist, dressed in a sleek black suit, holds his instrument with a firm grip, his bow moving rhythmically across the strings, creating a visual counterpart of resonant tones as the bow hairs interact with the taut strings, causing them to vibrate vigorously. His face contorts with emotion, his mouth slightly open as if breathing life into each note, his chest rising and falling with the intensity of the music. Beside him, the pianist, also in formal attire, presses down on the piano keys with deliberate force, his fingers striking the keys with precision, causing the hammers inside to hit the strings, producing a cascade of harmonious sounds. The camera captures close-up shots of both musicians, highlighting the intricate details of their instruments the glossy finish of the cello reflecting the warm light, the polished black surface of the piano gleaming under the stage lights. The scene is highly detailed, rendered in 8K resolution with a cinematic style, emphasizing the dramatic interplay of light and shadow, capturing every subtle movement and expression that brings the music to life."
+                        </span>
+                    </div>
+                    <div class="comp-prompt-box">
+                        <span class="comp-prompt-label">Audio Caption</span>
+                        <span class="comp-prompt-content">
+                            "The rich, resonant tones of a cello fill the air, the bow gliding smoothly over the strings, creating a deep, emotive melody that reverberates through the space."
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-dynamic" style="flex-direction: row; align-items: center; gap: -1px;">
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Ours</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case1/ours.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Veo3</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case1/veo3.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">JavisDiT</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case1/javis.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">JointDiT</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case1/jointdit.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Tpos</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case1/tpos.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">MTV</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case1/mtv.mp4"></video>                  
+                    </div>  
+                </div>               
+            </div>
+
+            <div class="comparison-case">
+                <div class="comparison-text-box">
+                    <div class="subtitle" style="font-family: 'Alegreya'; font-size: 1.6em;">Case 2</div>
+                    <div class="comp-prompt-box">
+                        <span class="comp-prompt-label">Video Caption</span>
+                        <span class="comp-prompt-content">
+                            "In a serene outdoor shooting range surrounded by lush green grass under a clear blue sky, a man with short red hair, wearing a beige shirt and protective ear muffs, is intensely focused on firing a large, black machine gun mounted on a sturdy wooden table. The atmosphere is calm yet charged with anticipation, emphasized by the high-contrast lighting that casts sharp shadows across the scene. The man's face is partially obscured by the gun's scope as he peers through it, his eyes narrowing in concentration. His fingers grip the trigger firmly, and with each pull, the gun recoils sharply, its barrel jerking back and forth with powerful force. Empty bullet casings eject with precision, arcing gracefully before clattering onto the table, which is already littered with spent ammunition. A coiled spring magazine feeds the weapon, its metallic links glinting in the sunlight as they move rhythmically. In the background, various items like water bottles and cleaning supplies rest on the table, subtly swaying with each shot. The camera captures this intense moment from a medium close-up angle, focusing on the man's determined expression and the intricate mechanics of the firearm. The visual counterpart of the shots' sounds is depicted through the rapid, synchronized movements of the gun's components, the visible recoil, and the cascading casings, all rendered in photorealistic detail with dramatic lighting and high visual quality, creating a vivid and immersive experience."
+                        </span>
+                    </div>
+                    <div class="comp-prompt-box">
+                        <span class="comp-prompt-label">Audio Caption</span>
+                        <span class="comp-prompt-content">
+                            "The powerful and rapid staccato of a machine gun firing, with each shot punctuated by the sharp, metallic sound of empty bullet casings clattering onto the wooden table, creates a tense and intense soundscape."
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-dynamic" style="flex-direction: row; align-items: center; gap: -1px;">
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Ours</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case2/ours.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Veo3</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case2/veo3.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">JavisDiT</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case2/javis.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">JointDiT</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case2/jointdit.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Tpos</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case2/tpos.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">MTV</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case2/mtv.mp4"></video>                  
+                    </div>  
+                </div> 
+                
+            </div>
+
+            <div class="comparison-case">
+                <div class="comparison-text-box">
+                    <div class="subtitle" style="font-family: 'Alegreya'; font-size: 1.6em;">Case 3</div>
+                    <div class="comp-prompt-box">
+                        <span class="comp-prompt-label">Video Caption</span>
+                        <span class="comp-prompt-content">
+                            "In a dimly lit recording studio bathed in purple hues, a passionate musician with long dreadlocks sits poised before a set of conga drums, his face illuminated by the soft glow of strategically placed lights that cast dramatic shadows across the room. The walls, adorned with soundproofing panels, create an intimate atmosphere, while the polished wooden floor reflects the warm tones of the instruments. The musician, dressed in a crisp white shirt layered under a gray and white checkered sweater, exudes focus and energy as he begins his performance. His hands move with precision and force, striking the taut drumheads with rhythmic intensity. Each impact sends subtle vibrations through the air, causing the drum skins to ripple and the surrounding microphones to capture every nuance. The musician\u2019s facial expressions shift with the rhythm, his jaw tightening and eyes narrowing as he builds momentum. The camera captures close-up shots of his hands, highlighting the intricate finger movements and the slight indentation left on the drumheads with each strike. The sequence transitions seamlessly between wide-angle views of the entire setup and tight focuses on the musician\u2019s dynamic gestures, emphasizing the physicality of the performance. The visual counterpart of the music is palpable as the drums resonate, their vibrations subtly affecting the surrounding air and creating a sense of immersive sound. The artistic style is cinematic, with high-contrast lighting that accentuates the textures of the wood and the smoothness of the drum skins, all rendered in highly detailed, 8K quality. The scene is a masterful blend of motion, emotion, and visual storytelling, capturing the essence of live musical expression."
+                        </span>
+                    </div>
+                    <div class="comp-prompt-box">
+                        <span class="comp-prompt-label">Audio Caption</span>
+                        <span class="comp-prompt-content">
+                            "The deep, resonant thud of conga drums fills the space, each strike producing a rich, vibrant tone that reverberates through the air. The rhythmic intensity and precise hand movements create a captivating soundscape, with the subtle vibrations of the drum skins adding depth and nuance to the performance."
+                        </span>
+                    </div>
+                </div>
+                <div class="flex flex-dynamic" style="flex-direction: row; align-items: center; gap: -1px;">
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Ours</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case3/ours.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Veo3</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case3/veo3.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">JavisDiT</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case3/javis.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">JointDiT</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case3/jointdit.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Tpos</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case3/tpos.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">MTV</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case3/mtv.mp4"></video>                  
+                    </div>  
+                </div>
+                
+        </div>
+    </section>
+
+    <section id="video">
     <section class="ethics-section">
         <h3>Ethics Statement</h3>
         <p>
