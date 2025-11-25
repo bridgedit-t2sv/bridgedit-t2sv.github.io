@@ -1185,10 +1185,178 @@
         </div>
 
         <div class="content">
-            
+            <!-- Case 1 -->
             <div class="comparison-case">
                 <div class="comparison-text-box">
                     <div class="subtitle" style="font-family: 'Alegreya'; font-size: 1.6em;">Case 1</div>
+                    <div class="comp-prompt-box">
+                        <span class="comp-prompt-label">Video Caption</span>
+                        <span class="comp-prompt-content">
+                            "In a desolate outdoor shooting range, surrounded by leafless trees and overcast skies, creating a somber and tense atmosphere, a man dressed in a green camouflage jacket and a matching cap stands firmly, his body slightly angled towards the target. His glasses reflect the muted light, adding to the seriousness of the moment. The man holds a large, black revolver with both hands, his grip firm and steady. As he takes aim, his eyes narrow in focus, and his fingers tighten around the trigger. The camera captures this intense moment from a medium shot, slowly zooming in on the revolver as the man fires. The gun recoils sharply, sending a burst of white smoke billowing outwards, momentarily obscuring the view. The impact of the bullet is implied by the sudden jolt of the gun and the expanding cloud of smoke. The man's arm muscles flex with each shot, emphasizing the force behind the discharge. The surrounding dry grass and bushes sway slightly, disturbed by the concussion of the shots. The scene is rendered in high-definition, photorealistic detail, with dramatic lighting that highlights the textures of the man's clothing, the metallic sheen of the revolver, and the thick, lingering smoke."
+                        </span>
+                    </div>
+                    <div class="comp-prompt-box">
+                        <span class="comp-prompt-label">Audio Caption</span>
+                        <span class="comp-prompt-content">
+                            "The sharp, resonant report of a cap gun firing echoes through the air, accompanied by the faint rustle of dry grass and bushes disturbed by the concussion."
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-dynamic" style="flex-direction: row; align-items: center; gap: -1px;">
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">BridgeDiT (Ours)</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample150/1.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Wan + SDA</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample150/4.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">JavisDiT</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample150/7.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">JointDiT</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample150/5.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">SDA + TmToken</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample150/3.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Wan + MMAudio</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample150/6.mp4"></video>                  
+                    </div>  
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Wan + Seeing</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample150/2.mp4"></video>                  
+                    </div>
+                </div>               
+            </div>
+            
+            <!-- Case 2 -->
+            <div class="comparison-case">
+                <div class="comparison-text-box">
+                    <div class="subtitle" style="font-family: 'Alegreya'; font-size: 1.6em;">Case 2</div>
+                    <div class="comp-prompt-box">
+                        <span class="comp-prompt-label">Video Caption</span>
+                        <span class="comp-prompt-content">
+                            "In a cozy, warmly lit living room, a scruffy, medium-sized dog with a patchwork coat of brown, black, and white fur sits attentively on a patterned rug, its eyes wide and ears perked up as if anticipating something exciting. The dog's mouth opens wide, revealing its pink tongue and teeth, as it appears to bark or vocalize, with its chest expanding and contracting rhythmically. The dog's head moves slightly from side to side, its whiskers twitching with each breath. In the background, a colorful, knitted blanket draped over a beige armchair adds a homely touch, while soft, ambient light casts gentle shadows across the scene. A person's legs, clad in casual pants, are visible in the upper right corner, suggesting the presence of a human companion nearby. The camera remains steady, capturing the dog's expressive face and the subtle vibrations of its vocal cords as it communicates. The dog's tail wags gently, creating small ripples in the air, and its paws shift slightly on the rug, emphasizing its engagement and energy. The overall atmosphere is intimate and inviting, with a photorealistic, high-definition quality that captures every detail of the dog's fur texture and the surrounding environment."<br>
+                        </span>
+                    </div>
+                    <div class="comp-prompt-box">
+                        <span class="comp-prompt-label">Audio Caption</span>
+                        <span class="comp-prompt-content">
+                            "The room is filled with the energetic and rhythmic sound of a dog barking, its vocalizations clear and enthusiastic, punctuated by the subtle rustling of its fur and the gentle thud of its tail wagging on the rug."
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-dynamic" style="flex-direction: row; align-items: center; gap: -1px;">
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">BridgeDiT (Ours)</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample034/4.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Wan + SDA</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample034/3.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">JavisDiT</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample034/1.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">JointDiT</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample034/6.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">SDA + TmToken</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample034/2.mp4"></video>                  
+                    </div>
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Wan + MMAudio</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample034/5.mp4"></video>                  
+                    </div>  
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Wan + Seeing</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample034/7.mp4"></video>                  
+                    </div>
+                </div>               
+            </div>
+
+            <!-- Case 3 -->
+            <div class="comparison-case">
+                <div class="comparison-text-box">
+                    <div class="subtitle" style="font-family: 'Alegreya'; font-size: 1.6em;">Case 3</div>
                     <div class="comp-prompt-box">
                         <span class="comp-prompt-label">Video Caption</span>
                         <span class="comp-prompt-content">
@@ -1205,21 +1373,21 @@
                 
                 <div class="flex flex-dynamic" style="flex-direction: row; align-items: center; gap: -1px;">
                     <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
-                        <div class="method-tag ours">Ours</div>
+                        <div class="method-tag ours">BridgeDiT (Ours)</div>
                             <div class="loading-placeholder">
                                 <div class="loading-text">Loading...</div>
                                 <div class="loading-icon">&#9749</div>
                             </div>
-                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case1/ours.mp4"></video>                  
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample007/7.mp4"></video>                  
                     </div>
 
                     <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
-                        <div class="method-tag ours">Veo3</div>
+                        <div class="method-tag ours">Wan + SDA</div>
                             <div class="loading-placeholder">
                                 <div class="loading-text">Loading...</div>
                                 <div class="loading-icon">&#9749</div>
                             </div>
-                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case1/veo3.mp4"></video>                  
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample007/6.mp4"></video>                  
                     </div>
 
                     <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
@@ -1241,7 +1409,7 @@
                     </div>
 
                     <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
-                        <div class="method-tag ours">Tpos</div>
+                        <div class="method-tag ours">SDA + TmToken</div>
                             <div class="loading-placeholder">
                                 <div class="loading-text">Loading...</div>
                                 <div class="loading-icon">&#9749</div>
@@ -1250,19 +1418,28 @@
                     </div>
 
                     <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
-                        <div class="method-tag ours">MTV</div>
+                        <div class="method-tag ours">Wan + MMAudio</div>
                             <div class="loading-placeholder">
                                 <div class="loading-text">Loading...</div>
                                 <div class="loading-icon">&#9749</div>
                             </div>
-                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/case1/mtv.mp4"></video>                  
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample007/3.mp4"></video>                  
                     </div>  
+
+                    <div class="prompt-wrap full-screen-wrap" style="width: 32%; position: relative;">
+                        <div class="method-tag ours">Wan + Seeing</div>
+                            <div class="loading-placeholder">
+                                <div class="loading-text">Loading...</div>
+                                <div class="loading-icon">&#9749</div>
+                            </div>
+                        <video playsinline loop controls onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/sample007/1.mp4"></video>                  
+                    </div>
                 </div>               
             </div>
 
             <div class="comparison-case">
                 <div class="comparison-text-box">
-                    <div class="subtitle" style="font-family: 'Alegreya'; font-size: 1.6em;">Case 2</div>
+                    <div class="subtitle" style="font-family: 'Alegreya'; font-size: 1.6em;">Case 4</div>
                     <div class="comp-prompt-box">
                         <span class="comp-prompt-label">Video Caption</span>
                         <span class="comp-prompt-content">
@@ -1337,7 +1514,7 @@
 
             <div class="comparison-case">
                 <div class="comparison-text-box">
-                    <div class="subtitle" style="font-family: 'Alegreya'; font-size: 1.6em;">Case 3</div>
+                    <div class="subtitle" style="font-family: 'Alegreya'; font-size: 1.6em;">Case 5</div>
                     <div class="comp-prompt-box">
                         <span class="comp-prompt-label">Video Caption</span>
                         <span class="comp-prompt-content">
@@ -1409,6 +1586,8 @@
                 
         </div>
     </section>
+
+    
 
     <section id="video">
     <section class="ethics-section">
