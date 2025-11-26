@@ -4,7 +4,7 @@ from typing import Optional, Union, List, Dict, Any
 from models.stable_audio.stable_audio_transformer import StableAudioDiTModel
 from models.stable_audio.stable_audio_modeling import StableAudioProjectionModel
 from models.wan_video.wan_video_transformer import WanTransformer3DModel
-from models.dit.dit_dual_stream_clean import DualDiTBlockAdaLN, CrossDiTBlockAdaLN, AddFusionDiTBlockAdaLN
+from models.dit.dit_dual_stream_clean import FullDiTBlockAdaLN, CrossDiTBlockAdaLN, AddFusionDiTBlockAdaLN
 from diffusers.models import AutoencoderOobleck, AutoencoderKLWan
 from diffusers.schedulers import UniPCMultistepScheduler, CosineDPMSolverMultistepScheduler, FlowMatchEulerDiscreteScheduler
 from diffusers.utils.torch_utils import randn_tensor
@@ -464,7 +464,7 @@ class JointDiT_T2AV(BasePipeline):
         if self.fusion_type == "full_attn":
             for i in range(self.dual_block_nums):
                 self.dual_dit_blocks.append(
-                    DualDiTBlockAdaLN(
+                    FullDiTBlockAdaLN(
                         self.num_channels_1, 
                         self.num_channels_2,
                         self.num_qk_channels,
@@ -1125,7 +1125,9 @@ class JointDiT_T2AV(BasePipeline):
                 return video_np[frame_index]
             video_clip = VideoClip(make_frame, duration=duration)
             # 2. 处理音频数据：audio_tensor[0] 维度为 (channels, samples)
+            print(audio_tensor.shape)
             audio_np = audio_tensor[sample_idx].squeeze(0).T.float().cpu().numpy()  # 转成 numpy, shape (samples, channels)
+            print(audio_np.shape)
             sampling_rate = self.audio_vae.sampling_rate
             audio_clip = AudioArrayClip(audio_np, fps=sampling_rate)
             # 3. 合成音视频
