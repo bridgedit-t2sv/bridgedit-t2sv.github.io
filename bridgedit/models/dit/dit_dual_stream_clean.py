@@ -91,7 +91,7 @@ def apply_rotary_emb(
 
 # Modified from perceiver-io implemented by krasserm
 # https://github.com/krasserm/perceiver-io/blob/main/perceiver/model/core/modules.py
-class DualMultiHeadAttention(nn.Module):
+class FullAttention(nn.Module):
     def __init__(
         self,
         num_heads: int,
@@ -255,30 +255,6 @@ class DualMultiHeadAttention(nn.Module):
             k.split(self.max_heads_parallel, dim=1),
             v.split(self.max_heads_parallel, dim=1),
         ):
-            ''' Raw attention computation '''
-            # attn = torch.einsum("b h i c, b h j c -> b h i j", q_chunk, k_chunk)
-            # attn_max_neg = -torch.finfo(attn.dtype).max
-    
-            # if pad_mask is not None:
-            #     attn.masked_fill_(pad_mask, attn_max_neg)
-    
-            # if self.causal_attention:
-            #     attn.masked_fill_(causal_mask, attn_max_neg)
-                
-            # if independent_attention:
-            #     for i in range(len(independent_attention)):
-            #         if independent_attention[i]:
-            #             attn[i].masked_fill_(~attn_mask, attn_max_neg)
-            # if cross_only_attention:
-            #     for i in range(len(cross_only_attention)):
-            #         if cross_only_attention[i]:
-            #             attn[i].masked_fill_(attn_mask, attn_max_neg)
-    
-            # attn = attn.softmax(dim=-1)
-            # attn = self.dropout(attn)
-    
-            # o_chunk = torch.einsum("b h i j, b h j c -> b h i c", attn, v_chunk)
-    
             ''' Flash attention computation '''
             _q = q_chunk.transpose(1, 2)
             _k = k_chunk.transpose(1, 2)
@@ -585,7 +561,7 @@ class MLP(nn.Module):
         return x
 
 # Modified from Meta DiT
-class DualDiTBlockAdaLN(nn.Module):
+class FullDiTBlockAdaLN(nn.Module):
     """
     A DiT block with expert modules.
     """
@@ -604,7 +580,7 @@ class DualDiTBlockAdaLN(nn.Module):
         super().__init__()
         self.norm_attn_1 = nn.LayerNorm(num_input_channels_1, elementwise_affine=False, eps=1e-6)
         self.norm_attn_2 = nn.LayerNorm(num_input_channels_2, elementwise_affine=False, eps=1e-6)
-        self.attn = DualMultiHeadAttention(
+        self.attn = FullAttention(
             num_heads = num_heads,
             num_input_channels_1 = num_input_channels_1,
             num_input_channels_2 = num_input_channels_2,
@@ -840,3 +816,7 @@ class AddFusionDiTBlockAdaLN(nn.Module):
         # sample_2 = sample_2 + gate_mlp_2.unsqueeze(1) * self.mlp_2(sample_2_adaln)
         
         # return sample_1, sample_2
+
+if __name__ == "__main__":
+    
+    pass
